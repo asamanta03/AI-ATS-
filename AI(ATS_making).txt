@@ -1,0 +1,106 @@
+ATS:
+Meeting Summary
+This was a live training session from Batch-42 Multi-Cloud with AWS + DevOps + AI Bootcamp conducted by Vikas from CloudDevOpsHub.
+
+Key Topics Covered:
+1. AI Fundamentals:
+
+Explained how AI works: collecting data, understanding patterns, and making predictions
+Discussed three types of AI:
+Generative AI: Generates data/content
+Agentic AI: Multiple agents working together for deep research and analytics
+AI Agents: Performs specific tasks based on responses
+2. Practical Project - ATS (Applicant Tracking System):
+The session focused on building an AI-powered resume screening application using:
+
+AWS EC2 (Ubuntu machine)
+Python application
+Google Cloud Gemini API integration
+3. Implementation Steps:
+
+Created AWS EC2 instance in Mumbai region
+Installed Python 3, pip, and required dependencies
+Installed poppler-utils (for PDF to text conversion)
+Downloaded Python application code from repository
+Created virtual environment and installed dependencies
+Generated Google Cloud API key from GCP credentials
+Created .streamlit/secrets.toml file to store API key
+Opened port 8501 on security group
+Launched the application
+4. Application Functionality:
+The ATS system analyzes resumes against job descriptions and provides:
+
+Strengths and weaknesses
+Missing keywords
+Percentage match
+Recommendations for improvement
+5. Key Takeaway:
+Vikas emphasized using AI tools like ChatGPT to optimize resumes before applying for jobs, as many companies use ATS systems that may reject applications if keywords don't match job descriptions sufficiently.
+
+The session included hands-on practice with students sharing screenshots of their progress in WhatsApp group.
+=====================================================================
+Q&A from the Meeting
+Q1: What is the main topic of this session?
+A: The session focuses on implementing AI in a Multi-Cloud DevOps project, specifically building an ATS (Applicant Tracking System) application using Python, AWS EC2, and Google Cloud's Gemini AI.
+
+Q2: What are the three types of AI discussed?
+A: The three types are:
+
+Generative AI - generates data/content
+Agentic AI - uses multiple AI agents working together for deep research and analytics
+AI Agents - performs specific tasks automatically based on responses
+Q3: What is the difference between Generative AI and Agentic AI?
+A: Generative AI generates content directly. Agentic AI uses multiple agents to do deep research, comparisons, and analytics from different models before providing results.
+
+Q4: What are the main steps to set up the ATS application?
+A:
+
+Create AWS EC2 Ubuntu machine
+Install Python and dependencies
+Download the Python ATS application
+Configure the EC2 machine
+Get Gemini API key from Google Cloud
+Integrate the API key with the application
+Q5: What port number is used for the application?
+A: Port 8501
+
+Q6: How do you get the Google Gemini API key?
+A: Go to Google Cloud Platform → Credentials → Create Credentials → API Key → Copy the generated key
+
+Q7: What is TOML and why is it used?
+A: TOML stands for Token Object Model Language (or Tom's Obvious Minimal Language). It's used to store the secret API key in a file format that handles token-related information.
+
+Q8: What library is used to read PDF files in this project?
+A: The poppler-utils library is used to extract data from PDFs so that AI can understand and process the content.
+
+Q9: How does the ATS application help job seekers?
+A: The application analyzes resumes against job descriptions and provides:
+
+Strength points
+Weakness points
+Missing keywords
+Percentage match
+
+=======================================================================================
+Based on today's practical session, here are some scenario-based Q&A:
+
+Scenario 1: Application Setup Error
+Q: Your Python application fails to start on EC2. What could be the issue?
+A: Check if you've activated the virtual environment using the command from line 39-40. Also verify that all dependencies from requirements.txt are installed (line 44) and the Google API key is correctly configured in the .streamlit/secrets.toml file.
+
+Scenario 2: Port Access Issue
+Q: You've deployed the application but cannot access it through the browser. What should you check?
+A: Verify that port 8501 is opened in the EC2 security group. Go to the VM, click on security group, add inbound rule for port 8501 with source 0.0.0.0/0 to allow internet access.
+
+Scenario 3: API Key Configuration
+Q: The ATS application is not generating responses. What could be wrong?
+A: The Google API key might not be properly configured. Verify that you've created the .streamlit/secrets.toml file with the correct format: GOOGLE_API_KEY = "your-key-here". Check the file using cat .streamlit/secrets.toml command.
+
+Scenario 4: PDF Reading Error
+Q: Resume upload fails or doesn't show analysis. What's the likely cause?
+A: The poppler-utils library (line 31) might not be installed properly. This utility is required to extract data from PDF files so that Gemini AI can understand and process the resume content.
+
+Scenario 5: Multi-Cloud Integration
+Q: In an interview, how would you explain this project's multi-cloud architecture?
+A: This project demonstrates hybrid cloud implementation using AWS EC2 for hosting the Python application and Google Cloud Platform (GCP) for AI services through Gemini API integration. It showcases multi-cloud DevOps skills by combining infrastructure from different cloud providers.
+========================================================================================
